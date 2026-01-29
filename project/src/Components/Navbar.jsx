@@ -196,8 +196,6 @@ function Navbar({
 
 const handlelogin=()=>{
   
-  // setUser(true)
-  // console.log(user);
   navigate('/myapp/login')
 }
   const closeMenu = () => setMenuOpen(false);
@@ -247,11 +245,11 @@ const handlelogin=()=>{
 
 {!isLoggedIn ? (
   
-  <Link to="/login" className="login-logout-btn" onClick={handlelogin}>
+  <Link  to="/myapp/login" className="login-logout-btn" onClick={handlelogin}>
   Login
 </Link>
 ) : (
-  <Link to="/login" className="login-logout-btn" onClick={handlelogout}>
+  <Link  to="/myapp/login" className="login-logout-btn" onClick={handlelogout}>
   Logout
 </Link>
 )}
