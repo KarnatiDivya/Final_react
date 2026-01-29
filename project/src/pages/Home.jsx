@@ -89,6 +89,19 @@ function Home() {
         </form>
       </section>
     </div>
+    <footer className="footer">
+        <p>© {new Date().getFullYear()} Karnati Divya. All rights reserved.</p>
+        <div className="footer-links">
+          <a href="mailto:divyareddykarnati9502@gmail.com">divyareddykarnati9502@gmail.com</a>
+          <a
+            href="https://www.linkedin.com/in/divyakarnati3/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </footer> 
 
     </div>
   );
