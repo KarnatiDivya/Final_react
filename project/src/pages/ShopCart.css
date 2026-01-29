@@ -1,0 +1,332 @@
+/* ===== Cart Container ===== */
+
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* ===== Empty Cart Card ===== */
+
+.empty-cart-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #c9a24d11, #b09b3c11);
+    text-align: center;
+}
+
+.empty-cart-card h3 {
+    margin-top: 15px;
+    font-size: 24px;
+    color: #333;
+}
+
+.empty-cart-card p {
+    margin-top: 8px;
+    color: #666;
+}
+
+.shop-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #c9a24d, #b08d3c);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shop-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ===== Cart Items ===== */
+
+.cart-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cart-item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item-details h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #222;
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* ===== Quantity Controls ===== */
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-controls button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.quantity-controls button:hover {
+    background: #333;
+}
+
+.quantity-controls span {
+    min-width: 24px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* ===== Remove Button ===== */
+
+.cart-item-remove {
+    padding: 8px 14px;
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.cart-item-remove:hover {
+    background: #e60000;
+}
+
+
+/* ===== Buy / Receipt Buttons ===== */
+
+.buy-btn {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #c9a24d, #b08d3c);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ===== Receipt / Payment Card ===== */
+
+.receipt-card {
+    width: 60%;
+    margin-top: 30px;
+    padding: 20px;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.receipt-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+    color: #222;
+}
+
+.receipt-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.receipt-card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.receipt-card h4 {
+    margin-top: 15px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+
+/* ===== Order Form Fields ===== */
+
+.receipt-card input,
+.receipt-card textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    resize: none;
+}
+
+.receipt-card textarea {
+    min-height: 80px;
+}
+
+.receipt-card input:focus,
+.receipt-card textarea:focus {
+    border-color: #b08d3c;
+    outline: none;
+    box-shadow: 0 0 5px rgba(176, 141, 60, 0.3);
+}
+
+
+/* ===== Pay Now Button ===== */
+
+.pay-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #c9a24d, #b08d3c);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pay-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pay-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+    .cart-container {
+        padding: 60px 15px 30px;
+    }
+    .receipt-card {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-container {
+        padding: 50px 15px 20px;
+    }
+    .cart-item-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .cart-item-left {
+        gap: 10px;
+    }
+    .quantity-controls {
+        gap: 5px;
+    }
+    .quantity-controls button {
+        width: 26px;
+        height: 26px;
+        font-size: 13px;
+    }
+    .cart-item-image {
+        width: 70px;
+        height: 70px;
+    }
+    .receipt-card {
+        width: 60%;
+    }
+    .receipt-card input,
+    .receipt-card textarea {
+        font-size: 13px;
+        padding: 8px;
+    }
+    .pay-btn,
+    .buy-btn,
+    .shop-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-item-image {
+        width: 60px;
+        height: 60px;
+    }
+    .cart-item-details h4 {
+        font-size: 14px;
+    }
+    .cart-item-details p {
+        font-size: 13px;
+    }
+    .quantity-controls span {
+        font-size: 12px;
+    }
+}

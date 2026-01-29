@@ -1,0 +1,380 @@
+/* ========== GLOBAL RESET ========== */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevent horizontal overflow */
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #333;
+}
+
+
+/* ========== HERO / HOME SECTION ========== */
+
+.home-section {
+    width: 90%;
+    padding-top: 70px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.image {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    padding-left: 50px;
+    background-position: center center;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.image:hover {
+    transform: scale(1.05);
+}
+
+.home-title {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    margin: 1rem 0;
+}
+
+.home-quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+
+/* ========== ABOUT SECTION ========== */
+
+.about-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.about-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-text,
+.about-image {
+    flex: 1 1 400px;
+    padding: 20px;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.about-text ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.about-text ul li {
+    position: relative;
+    padding: 14px 18px 14px 45px;
+    margin-bottom: 14px;
+    background: #faf7f2;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    cursor: pointer;
+    /* Smooth animation */
+    transition: all 0.35s ease;
+}
+
+
+/* Custom luxury bullet */
+
+.about-text ul li::before {
+    content: "✦";
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+    color: coral;
+    font-size: 14px;
+    transition: transform 0.35s ease, color 0.35s ease;
+}
+
+
+/* Hover effects */
+
+.about-text ul li:hover {
+    background: #fff;
+    transform: translateX(8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Bullet animation on hover */
+
+.about-text ul li:hover::before {
+    transform: translateY(-50%) scale(1.4) rotate(180deg);
+    color: #b08d3c;
+}
+
+
+/* Optional fade-in animation */
+
+.about-text ul li {
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.about-text ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.about-text ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.about-text ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.about-text ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+
+/* Animation for the image on page load */
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+        /* start slightly to the right */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        /* end in place */
+    }
+}
+
+.about-image img {
+    width: 100%;
+    height: 98%;
+    object-fit: cover;
+    border-radius: 20px;
+    /* Add animation */
+    animation: fadeSlideIn 1s ease-out infinite;
+    transition: transform 0.3s ease;
+    /* for hover zoom */
+}
+
+
+/* Optional: zoom effect on hover */
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+
+/* ========== CONTACT SECTION ========== */
+
+.contact-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 50px 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.8rem;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    resize: vertical;
+    /* Allows vertical expand on textarea */
+}
+
+.contact-form button {
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+
+/* ========== FOOTER ========== */
+
+.footer {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #4db6ac;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+
+/* ========== TABLET MEDIA QUERIES (<= 900px) ========== */
+
+@media (max-width: 900px) {
+    .home-title {
+        font-size: 2.5rem;
+    }
+    .home-quote {
+        font-size: 1.3rem;
+    }
+    .image {
+        height: 400px;
+    }
+    .about-text,
+    .about-image {
+        padding: 15px;
+    }
+    .about-text h2 {
+        font-size: 2.2rem;
+    }
+    .contact-section {
+        padding: 40px 15px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.95rem;
+    }
+    .contact-form button {
+        font-size: 1rem;
+    }
+}
+
+
+/* ========== MOBILE MEDIA QUERIES (<= 600px) ========== */
+
+@media (max-width: 600px) {
+    .image {
+        height: 280px;
+    }
+    .home-title {
+        font-size: 2rem;
+    }
+    .home-quote {
+        font-size: 1.1rem;
+    }
+    .about-section {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    .about-text,
+    .about-image {
+        flex: 1 1 100%;
+        padding: 12px;
+    }
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+    .about-text p,
+    .about-text ul {
+        font-size: 1rem;
+    }
+    .contact-section {
+        padding: 30px 10px;
+    }
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+    .contact-form button {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+    .footer {
+        font-size: 0.8rem;
+        padding: 12px 8px;
+    }
+}

@@ -1,0 +1,288 @@
+/* ===============================
+   FILTERS
+================================ */
+
+.filters-container {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem;
+    justify-content: flex-start;
+}
+
+.filters-container input,
+.filters-container select {
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+}
+
+.filters-container input:focus,
+.filters-container select:focus {
+    outline: none;
+    border-color: #ff6f3c;
+    box-shadow: 0 0 5px rgba(255, 111, 60, 0.5);
+}
+
+
+/* ===============================
+   PRODUCTS GRID
+================================ */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    margin: 2rem;
+}
+
+
+/* ===============================
+   PRODUCT CARD
+================================ */
+
+.product-card {
+    width: 350px;
+    position: relative;
+    /* for stock badge */
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ===============================
+   PRODUCT IMAGE
+================================ */
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+/* ===============================
+   STOCK STATUS
+================================ */
+
+.stock-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.stock-status.inStock {
+    background-color: green;
+}
+
+.stock-status.limited {
+    background-color: orange;
+}
+
+.stock-status.noStock {
+    background-color: red;
+}
+
+
+/* ===============================
+   PRODUCT BUTTONS
+================================ */
+
+.product-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+}
+
+.product-buttons button {
+    padding: 0.35rem 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.edit-btn {
+    background-color: orange;
+}
+
+.delete-btn {
+    background-color: red;
+}
+
+
+/* ===============================
+   ADD / EDIT FORM
+================================ */
+
+.add-edit-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.add-edit-form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.add-edit-form button {
+    width: 100%;
+    padding: 10px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* ===============================
+   NAVBAR
+================================ */
+
+.admin-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+.navbar-btn,
+.logout-btn {
+    margin-left: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #c9a24d, #b08d3c);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+}
+
+
+/* ===============================
+   PAGINATION
+================================ */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.pagination button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    color: #333333;
+    font-size: 14px;
+}
+
+.pagination button.active-page {
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+/* ===============================
+   RESPONSIVE MEDIA QUERIES
+================================ */
+
+
+/* Tablet: screens up to 1024px wide */
+
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns */
+        gap: 1rem;
+        margin: 40px 1rem;
+        /* reduce margin for smaller screens */
+        padding: 1rem;
+    }
+    .product-card {
+        width: 100%;
+        /* fill grid cell */
+    }
+    .product-image {
+        height: 160px;
+        /* slightly smaller image */
+    }
+}
+
+
+/* Mobile: screens up to 600px wide */
+
+@media (max-width: 600px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        /* single column */
+        gap: 0.75rem;
+        margin: 20px 0.5rem;
+        /* tighter margins */
+        padding: 0.5rem;
+    }
+    .product-card {
+        width: 100%;
+        /* full width */
+        padding: 0.75rem;
+    }
+    .product-image {
+        height: 140px;
+        /* smaller images */
+    }
+    .product-buttons {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    .pagination {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    .pagination button {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+    .filters-container {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 10px 0.5rem;
+    }
+    .admin-navbar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}

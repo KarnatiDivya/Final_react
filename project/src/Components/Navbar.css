@@ -1,0 +1,136 @@
+/* Navbar.css */
+
+
+/* Navbar container */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    border-radius: 5%;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+
+/* Flex container */
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8em 1.5em;
+}
+
+
+/* Logo */
+
+.nav-logo {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #c59d5f;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.nav-logo:hover {
+    color: #a6783f;
+}
+
+
+/* Navbar links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+
+/* Links and spans styling */
+
+.nav-links a,
+.nav-links span {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links span:hover {
+    color: #c59d5f;
+}
+
+
+/* Cart link with badge */
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: #c59d5f;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 0.7em;
+}
+
+
+/* Guest badge */
+
+.guest-badge {
+    background-color: #c59d5f;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+
+/* Mobile menu button */
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s ease;
+}
+
+.menu-btn:hover {
+    color: #c59d5f;
+}
+
+
+/* Mobile styles */
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 1em 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        gap: 1em;
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-btn {
+        display: block;
+    }
+}

@@ -1,0 +1,359 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ✔ Prevent horizontal overflow globally */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+/* home */
+
+
+/* RESET */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   HOME SECTION
+========================= */
+
+.home-section {
+    width: 100%;
+    padding-top: 70px;
+    text-align: center;
+}
+
+
+/* Title & quote */
+
+.home-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.home-quote {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+    font-style: italic;
+}
+
+
+/* =========================
+   IMAGE CONTAINER
+========================= */
+
+.image-container {
+    max-width: 120px;
+    /* controls visible width */
+    margin: 0 auto;
+    /* centers container */
+    padding: 0 16px;
+}
+
+
+/* IMAGE */
+
+
+/* .image {
+    width: 80%;
+    height: 500px;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    transition: transform 0.5s ease-in-out;
+} */
+
+
+/* Hover zoom */
+
+
+/* .image:hover {
+    transform: scale(1.08);
+} */
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .home-title {
+        font-size: 2.2rem;
+    }
+    .image {
+        width: 100%;
+        height: 300px;
+        border-radius: 0;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .home-title {
+        font-size: 2.2rem;
+    }
+    .image {
+        width: 100%;
+        height: 300px;
+        border-radius: 0;
+    }
+}
+
+
+/* about */
+
+.about-section {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: stretch;
+    margin: 40px 0;
+}
+
+.about-container {
+    display: flex;
+    width: 100%;
+    flex: 1;
+}
+
+.about-text {
+    flex: 1;
+    padding: 40px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.about-text ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+
+.about-image {
+    flex: 1;
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    height: 98%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+/* Animation for the image on page load */
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+        /* start slightly to the right */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        /* end in place */
+    }
+}
+
+.about-image img {
+    width: 100%;
+    height: 98%;
+    object-fit: cover;
+    border-radius: 20px;
+    /* Add animation */
+    animation: fadeSlideIn 1s ease-out forwards;
+    transition: transform 0.3s ease;
+    /* for hover zoom */
+}
+
+
+/* Optional: zoom effect on hover */
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+
+/* contact */
+
+.contact-section {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+
+/* --- Mobile (phones, <= 600px) --- */
+
+@media (max-width: 600px) {
+    .image {
+        height: 300px;
+    }
+    /* Home title smaller */
+    .home-title {
+        font-size: 2rem;
+        padding: 0 10px;
+    }
+    .home-quote {
+        font-size: 1.2rem;
+        padding: 0 10px;
+    }
+    .about-section {
+        flex-direction: column;
+        height: auto;
+    }
+    .about-text,
+    .about-image {
+        width: 100%;
+        padding: 15px;
+    }
+    .about-container {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .about-text {
+        order: 2;
+    }
+    .about-image {
+        order: 1;
+    }
+    .about-text h2 {
+        font-size: 2rem;
+    }
+    .about-text p,
+    .about-text ul {
+        font-size: 1rem;
+    }
+    /* Contact section narrower layout */
+    .contact-section {
+        padding: 40px 15px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+    .contact-form button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+
+/* --- Tablet (<= 900px) --- */
+
+@media (max-width: 900px) {
+    /* Slightly smaller hero image */
+    .image {
+        height: 400px;
+    }
+    .home-title {
+        font-size: 2.5rem;
+    }
+    .home-quote {
+        font-size: 1.3rem;
+    }
+    .about-section {
+        flex-direction: column;
+    }
+    .about-text,
+    .about-image {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+
+/* Optional: Larger desktop tweaks */
+
+@media (min-width: 1200px) {
+    .home-title {
+        font-size: 3.5rem;
+    }
+    .home-quote {
+        font-size: 1.8rem;
+    }
+}
